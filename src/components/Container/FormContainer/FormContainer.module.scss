@@ -1,3 +1,9 @@
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .formInput {
   width: 100px;
   margin: 5px;
