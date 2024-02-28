@@ -1,20 +1,9 @@
 .actionButton {
-  padding: 10px 0;
-  color: #000;
-  font-size: 18px;
-  font-weight: 600;
-  background: #dde1e7;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 25px;
-  box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
-
-  &:hover {
-    background-color: #3a5a40;
-    color: var(--white-color);
-    box-shadow: inset 2px 2px 5px #babecc, inset -5px -5px 10px #ffffff73;
-
-    transition: 0.5s;
-  }
+  padding: 4px;
+  margin: 5px;
+  border: 1px solid #003049;
+  border-radius: 5px;
+  background-color: #fff9ec;
+  color: #003049;
+  box-shadow: 2px 2px 6px 0px rgba(66, 68, 90, 1);
 }

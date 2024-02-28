@@ -21,12 +21,7 @@ body {
   //add global font/color/background-color use here
   font-family: "Roboto", sans-serif;
   color: var(--black-color);
-  background: rgb(172, 191, 164);
-  background: radial-gradient(
-    circle,
-    rgba(172, 191, 164, 1) 0%,
-    rgba(226, 232, 206, 1) 100%
-  );
+  background-color: #fdf0d5;
 }
 
 .container {

@@ -1,18 +1,42 @@
 .container {
-  background-color: #acbfa4;
-  padding: 20px 10px;
-  width: 500px;
-
+  background-color: #669bbc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: -5px 9px 24px 0px rgba(66, 68, 90, 1);
   display: flex;
   flex-direction: column;
+  gap: 15px;
   align-items: center;
-  justify-content: center;
+}
 
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.calcResult {
+  font-weight: 600;
+}
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  position: relative;
+  background: #fff;
+  box-shadow: -24px 0 #fff, 24px 0 #fff;
+  box-sizing: border-box;
+  animation: shadowPulse 2s linear infinite;
+
+  @keyframes shadowPulse {
+    33% {
+      background: #fff;
+      box-shadow: -24px 0 #780000, 24px 0 #fff;
+    }
+    66% {
+      background: #780000;
+      box-shadow: -24px 0 #fff, 24px 0 #fff;
+    }
+    100% {
+      background: #fff;
+      box-shadow: -24px 0 #fff, 24px 0 #780000;
+    }
+  }
 }
