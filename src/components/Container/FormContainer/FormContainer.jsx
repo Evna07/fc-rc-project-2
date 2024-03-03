@@ -6,17 +6,16 @@ import { URL } from "../../../data/API_URL.js";
 import { currencies } from "../../../data/currencyOptions.js";
 
 const FormContainer = ({
-  result,
+  updateResult,
   setDisplayLoading,
   setShowResult,
   setError,
 }) => {
   const [selectedCurrency, setSelectedCurrency] = useState("");
-  const validateForm = (formData) => {
-    if (!formData) {
-      return false;
-    }
-    return true;
+
+  const handleListChange = (e) => {
+    setSelectedCurrency(e.target.value);
+    setShowResult(false);
   };
 
   const handleAmountSubmit = (e) => {
@@ -30,28 +29,24 @@ const FormContainer = ({
       currency: currencies.value,
     };
 
-    if (validateForm(formData)) {
-      fetch(`${URL}${formData.currency}/`)
-        .then((response) => response.json())
-        .then((data) => {
-          const rate = data?.rates?.[0]?.mid;
-          if (rate) {
-            const rateValue = Number(rate);
-            result(rateValue, formData.amount, formData.currency);
-          } else {
-            setDisplayLoading(false);
-            setError("Nie można uzyskać wartości kursu waluty.");
-            console.log("Nie można uzyskać wartości kursu waluty.");
-          }
-        })
-        .catch((err) => {
+    fetch(`${URL}${formData.currency}/`)
+      .then((response) => response.json())
+      .then((data) => {
+        const rate = data?.rates?.[0]?.mid;
+        if (rate) {
+          const rateValue = Number(rate);
+          updateResult(rateValue, formData.amount, formData.currency);
+        } else {
           setDisplayLoading(false);
-          setError("Request Error");
-          console.log(err);
-        });
-    } else {
-      return false;
-    }
+          setError("Nie można uzyskać wartości kursu waluty.");
+          console.log("Nie można uzyskać wartości kursu waluty.");
+        }
+      })
+      .catch((err) => {
+        setDisplayLoading(false);
+        setError("Request Error");
+        console.log(err);
+      });
 
     e.currentTarget.elements.amount.value = "";
   };
@@ -75,9 +70,9 @@ const FormContainer = ({
         id="currencies"
         className={styles.currencySelect}
         value={selectedCurrency}
-        onChange={(e) =>
-          setSelectedCurrency(e.target.value, setShowResult(false))
-        }
+        onChange={(e) => {
+          handleListChange(e);
+        }}
       >
         {currencies.map((currency) => (
           <option key={nanoid()} value={currency}>

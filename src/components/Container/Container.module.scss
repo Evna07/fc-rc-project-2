@@ -1,5 +1,5 @@
 .container {
-  background-color: #669bbc;
+  background-color: var(--secondary-background);
   border-radius: 10px;
   padding: 20px;
   box-shadow: -5px 9px 24px 0px rgba(66, 68, 90, 1);
@@ -22,7 +22,6 @@
   position: relative;
   background: #fff;
   box-shadow: -24px 0 #fff, 24px 0 #fff;
-  box-sizing: border-box;
   animation: shadowPulse 2s linear infinite;
 
   @keyframes shadowPulse {
