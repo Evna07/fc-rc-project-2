@@ -38,14 +38,12 @@ const FormContainer = ({
           updateResult(rateValue, formData.amount, formData.currency);
         } else {
           setDisplayLoading(false);
-          setError("Nie można uzyskać wartości kursu waluty.");
-          console.log("Nie można uzyskać wartości kursu waluty.");
+          setError("Unable to get currency rate value.");
         }
       })
       .catch((err) => {
         setDisplayLoading(false);
         setError("Request Error");
-        console.log(err);
       });
 
     e.currentTarget.elements.amount.value = "";
