@@ -52,7 +52,7 @@ const FormContainer = ({
   return (
     <form onSubmit={handleAmountSubmit} className={styles.formContainer}>
       <div className={styles.formGroup}>
-        <label htmlFor="amount">Podaj kwotę:</label>
+        <label htmlFor="amount">Input amount:</label>
         <input
           required
           type="number"
