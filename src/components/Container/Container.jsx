@@ -24,7 +24,7 @@ const Container = () => {
 
   return (
     <div className={styles.container}>
-      <h1>Przelicznik walut</h1>
+      <h1>Simple currency converter</h1>
       <FormContainer
         updateResult={updateResult}
         displayLoading={displayLoading}
