@@ -68,3 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+This is a demo for currency converter, supporting conversion of PLN to EUR, USD and CHF based on info fetched from National Bank of Poland data.
+
+You can try the app here: https://stellar-caramel-5b909f.netlify.app/
